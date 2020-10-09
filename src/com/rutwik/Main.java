@@ -10,16 +10,6 @@ public class Main {
     public static int iterration = 0;
     public static void main(String[] args) {
 
-//        int[] row0 = {0,8,0,0,0,6,0,0,3};
-//        int[] row1 = {0,6,0,0,7,0,2,0,0};
-//        int[] row2 = {0,0,4,0,1,0,0,9,0};
-//        int[] row3 = {0,5,0,0,0,0,8,0,1};
-//        int[] row4 = {0,0,0,0,0,0,0,0,0};
-//        int[] row5 = {0,1,3,0,0,0,0,6,0};
-//        int[] row6 = {0,0,5,0,0,9,0,0,8};
-//        int[] row7 = {0,0,0,0,2,0,0,0,0};
-//        int[] row8 = {0,0,6,7,0,0,3,0,2};
-
         int[] row0 = {5,3,0,0,7,0,0,0,0};
         int[] row1 = {6,0,0,1,9,5,0,0,0};
         int[] row2 = {0,9,8,0,0,0,0,6,0};
@@ -32,7 +22,20 @@ public class Main {
 
         int[][] sudoku = {row0,row1,row2,row3,row4,row5,row6,row7,row8};
 
+        printSudoku(sudoku);
+
         solveSudoku(sudoku);
+
+        System.out.println();
+        System.out.println("---------------------X---------------------X---------------------X---------------------");
+        System.out.println();
+
+        System.out.println("Answer : ");
+        System.out.println();
+
+        printSudoku(sudoku);
+
+        System.out.println("Iteration Number : "+iterration);
 
     }
 
@@ -48,11 +51,11 @@ public class Main {
 
     public static void solveSudoku(int[][] sudoku){
 
-        System.out.println();
-        System.out.println("---------------------X---------------------X---------------------X---------------------");
-        System.out.println();
-
-        printSudoku(sudoku);
+//        System.out.println();
+//        System.out.println("---------------------X---------------------X---------------------X---------------------");
+//        System.out.println();
+//
+//        printSudoku(sudoku);
 
         checkRow(sudoku);
         checkColumn(sudoku);
@@ -65,13 +68,13 @@ public class Main {
 
         fillTheBox(sudoku);
 
-        printMaybe();
-
-        printSudoku(sudoku);
+//        printMaybe();
+//
+//        printSudoku(sudoku);
 
         iterration++;
 
-        System.out.println("Iteration Number : "+iterration);
+//        System.out.println("Iteration Number : "+iterration);
 
         if(!isSudokuSolved(sudoku))
             solveSudoku(sudoku);
